@@ -1,16 +1,25 @@
 import React from "react";
 
 export default function Navbar() {
-    return (
-      <nav style={{ background: "#111", padding: "15px 0" }}>
-        <div className="container" style={{ display: "flex", justifyContent: "space-between" }}>
-          <h2 style={{ color: "#FFD400" }}>CJA Taller Mecánico</h2>
-          <div>
-            <a href="#servicios" style={{ marginRight: 20 }}>Servicios</a>
-            <a href="#repuestos" style={{ marginRight: 20 }}>Repuestos</a>
-            <a href="#contacto">Contacto</a>
-          </div>
-        </div>
-      </nav>
-    );
-  }
+  return (
+    <nav style={{
+      position:"fixed",
+      width:"100%",
+      background:"rgba(0,0,0,0.45)",
+      backdropFilter:"blur(12px)",
+      borderBottom:"1px solid #0A84FF22"
+    }}>
+      <div className="container" style={{
+        display:"flex",
+        justifyContent:"flex-end",
+        padding:"18px 0",
+        gap:40,
+        fontWeight:"bold"
+      }}>
+        <a href="#servicios">Servicios</a>
+        <a href="#repuestos">Repuestos</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  );
+}

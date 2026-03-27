@@ -1,24 +1,29 @@
-import { useEffect, useState } from "react";
-import { getRepuestos } from "../services/api";
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 export default function Repuestos() {
-  const [repuestos, setRepuestos] = useState([]);
+  const [repuestos,setRepuestos] = useState([]);
 
-  useEffect(() => {
-    getRepuestos().then(setRepuestos);
-  }, []);
+  useEffect(()=>{
+    setRepuestos([
+      {id:1,nombre:"Kit transmisión",precio:45000},
+      {id:2,nombre:"Aceite Motul",precio:12000},
+      {id:3,nombre:"Pastillas freno",precio:18000}
+    ]);
+  },[])
 
   return (
-    <section id="repuestos" style={{ padding: "60px 0" }}>
-      <div className="container">
-        <h2>Repuestos</h2>
+    <section id="repuestos">
+      <div className="container section-content">
+        <h2 style={{textAlign:"center",marginBottom:50,fontSize:40}}>Repuestos</h2>
 
-        <ul>
-          {repuestos.map(r => (
-            <li key={r.id}>{r.nombre} - ${r.precio}</li>
+        <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:30}}>
+          {repuestos.map(r=>(
+            <div className="card" key={r.id}>
+              <h3>{r.nombre}</h3>
+              <p style={{color:"#FFD400",fontSize:22}}>${r.precio}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
