@@ -73,7 +73,7 @@ const styles = {
     slider: {
         display: "flex",
         gap: 30,
-        overflow: "hidden",
+        overflowX:"auto",
         padding: "0 40px",
         width: "100%",
         maxWidth: 1200,
